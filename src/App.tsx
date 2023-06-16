@@ -1,14 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
-import Login from './pages/Login/Login';
+import Login from './pages/login';
+import Search from './pages/search';
+// import Search from './pages/Search/Search';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={ <Login /> }>
-        {/* <Route index element={ <Home /> } />
-        <Route path="/profile/:username" element={ <Profile /> } /> */}
+      <Route path="/" element={ <Login /> } />
+      <Route path="/search" element={ <Search /> } />
+      {/* <Route path="/album/:id" element={ <Album /> } />
+        <Route path="/favorites" element={ <Favorites /> } />
+        <Route path="/profile" element={ <Profile /> } />
+        <Route path="/profile/edit" element={ <Profile /> } />
       </Route>
-      {/* <Route path="*" element={ <NotFound /> } /> */}
+      <Route path="*" element={ <NotFound /> }  */}
+      {/* </Route> */}
     </Routes>
   );
 }
