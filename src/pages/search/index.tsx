@@ -71,7 +71,8 @@ function Search() {
                           to={ `/album/${album.collectionId}` }
                           data-testid={ `link-to-album-${album.collectionId}` }
                         >
-                          <h2>{album.collectionName}</h2>
+                          <img src={ album.artworkUrl100 } alt="Capa do álbum" />
+                          <h5>{album.collectionName}</h5>
                         </Link>
                       ))
                     }
