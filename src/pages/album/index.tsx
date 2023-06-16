@@ -21,8 +21,8 @@ function Album() {
       setAlbumName(musicas[0].collectionName);
       console.log(albumName);
       console.log(data);
+      setIsLoading(false);
     };
-    setIsLoading(false);
     fetchApi();
   }, [id]);
 
@@ -36,7 +36,6 @@ function Album() {
             </p>
             <h3 data-testid="artist-name">
               {artistName}
-
             </h3>
             <div>
               {data.slice(1).map((song:any) => {
