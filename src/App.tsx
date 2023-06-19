@@ -9,13 +9,8 @@ function App() {
     <Routes>
       <Route path="/" element={ <Login /> } />
       <Route path="/search" element={ <Search /> } />
-      { <Route path="/album/:id" element={ <Album /> } />
-        /* <Route path="/favorites" element={ <Favorites /> } />
-        <Route path="/profile" element={ <Profile /> } />
-        <Route path="/profile/edit" element={ <Profile /> } />
-      </Route>
-      <Route path="*" element={ <NotFound /> }  */}
-      {/* </Route> */}
+      <Route path="/album/:id" element={ <Album /> } />
+
     </Routes>
   );
 }
