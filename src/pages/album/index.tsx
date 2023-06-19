@@ -20,11 +20,11 @@ function Album() {
       setArtistName(musicas[0].artistName);
       setAlbumName(musicas[0].collectionName);
       console.log(albumName);
-      console.log(data);
+      console.log(await data);
       setIsLoading(false);
     };
     fetchApi();
-  }, [id]);
+  }, [albumName, data, id]);
 
   return (
     <div>
@@ -45,6 +45,7 @@ function Album() {
                     trackId={ song.trackId }
                     trackName={ song.trackName }
                     previewUrl={ song.previewUrl }
+                    imageAlbum={ song.artworkUrl100 }
                   />
                 );
               })}
