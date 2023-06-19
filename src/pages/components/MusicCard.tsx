@@ -1,10 +1,39 @@
+import { useState } from 'react';
 import { SongType } from '../../types';
+import checkedHeart from '../../images/checked_heart.png';
+import emptyHeart from '../../images/empty_heart.png';
 
-export default function MusicCard({ song, previewUrl, trackName, imageAlbum }: SongType) {
+export default function MusicCard(
+  { song, previewUrl, trackName, imageAlbum, trackId }: SongType,
+) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const favoritas = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <div className="track-display">
       <p>{ song }</p>
       <p>{trackName}</p>
+
+      <label
+        htmlFor={ `checkbox-music-${trackId}` }
+        data-testid={ `checkbox-music-${trackId}` }
+      >
+        <input
+          type="checkbox"
+          id={ `checkbox-music-${trackId}` }
+          checked={ isFavorite }
+          onChange={ favoritas }
+          style={ { display: 'none' } } // para ocultar o checkbox, assim parece que o coração é o check.
+        />
+        <img
+          src={ isFavorite ? checkedHeart : emptyHeart }
+          alt="favorite"
+        />
+      </label>
+
       <div>
         <img src={ imageAlbum } alt="capa" />
       </div>
