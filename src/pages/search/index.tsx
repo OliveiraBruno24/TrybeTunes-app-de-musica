@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import LoadingMessage from '../components/Loading';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import { AlbumType } from '../../types';
+import Header from '../components/Header';
 
 function Search() {
   const [name, setName] = useState('');

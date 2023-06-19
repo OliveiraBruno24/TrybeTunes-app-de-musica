@@ -4,6 +4,7 @@ import getMusics from '../../services/musicsAPI';
 import { AlbumType, SongType } from '../../types';
 import LoadingMessage from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import Header from '../components/Header';
 
 function Album() {
   const [artistName, setArtistName] = useState('');
@@ -20,11 +21,11 @@ function Album() {
       setArtistName(musicas[0].artistName);
       setAlbumName(musicas[0].collectionName);
       console.log(albumName);
-      console.log(await data);
+      console.log(data);
       setIsLoading(false);
     };
     fetchApi();
-  }, [albumName, data, id]);
+  }, [id]);
 
   return (
     <div>
